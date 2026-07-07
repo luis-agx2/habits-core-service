@@ -6,6 +6,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 import java.time.LocalDateTime;
+import java.util.Objects;
 import java.util.UUID;
 
 @Entity
@@ -26,7 +27,7 @@ public class RoleEntity {
     public RoleEntity() { }
 
     public RoleEntity(Builder builder){
-        this.uuid = builder.uuid;
+        this.uuid = Objects.requireNonNullElseGet(builder.uuid, UUID::randomUUID);
         this.name = builder.name;
         this.createdAt = builder.createdAt;
         this.updatedAt = builder.updatedAt;
