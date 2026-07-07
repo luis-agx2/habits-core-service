@@ -9,7 +9,7 @@ public class RoleResponse {
 
     public RoleResponse() { }
 
-    public RoleResponse(Builder builder) {
+    private RoleResponse(Builder builder) {
         this.uuid = builder.uuid;
         this.name = builder.name;
     }
@@ -22,7 +22,7 @@ public class RoleResponse {
         return name;
     }
 
-    public Builder builder() {
+    public static Builder builder() {
         return new Builder();
     }
 
